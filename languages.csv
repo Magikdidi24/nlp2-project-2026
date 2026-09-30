@@ -1,0 +1,205 @@
+id,language_name,code,iso_639_3,iso_15924_script,script_name
+1,Acehnese (Arabic script),ace_Arab,ace,Arab,Arabic
+2,Acehnese (Latin script),ace_Latn,ace,Latn,Latin
+3,Mesopotamian Arabic,acm_Arab,acm,Arab,Arabic
+4,Ta'izzi-Adeni Arabic,acq_Arab,acq,Arab,Arabic
+5,Tunisian Arabic,aeb_Arab,aeb,Arab,Arabic
+6,Afrikaans,afr_Latn,afr,Latn,Latin
+7,South Levantine Arabic,ajp_Arab,ajp,Arab,Arabic
+8,Akan,aka_Latn,aka,Latn,Latin
+9,Amharic,amh_Ethi,amh,Ethi,Ethiopic
+10,North Levantine Arabic,apc_Arab,apc,Arab,Arabic
+11,Modern Standard Arabic,arb_Arab,arb,Arab,Arabic
+12,Modern Standard Arabic (Romanized),arb_Latn,arb,Latn,Latin
+13,Najdi Arabic,ars_Arab,ars,Arab,Arabic
+14,Moroccan Arabic,ary_Arab,ary,Arab,Arabic
+15,Egyptian Arabic,arz_Arab,arz,Arab,Arabic
+16,Assamese,asm_Beng,asm,Beng,Bengali
+17,Asturian,ast_Latn,ast,Latn,Latin
+18,Awadhi,awa_Deva,awa,Deva,Devanagari
+19,Central Aymara,ayr_Latn,ayr,Latn,Latin
+20,South Azerbaijani,azb_Arab,azb,Arab,Arabic
+21,North Azerbaijani,azj_Latn,azj,Latn,Latin
+22,Bashkir,bak_Cyrl,bak,Cyrl,Cyrillic
+23,Bambara,bam_Latn,bam,Latn,Latin
+24,Balinese,ban_Latn,ban,Latn,Latin
+25,Belarusian,bel_Cyrl,bel,Cyrl,Cyrillic
+26,Bemba,bem_Latn,bem,Latn,Latin
+27,Bengali,ben_Beng,ben,Beng,Bengali
+28,Bhojpuri,bho_Deva,bho,Deva,Devanagari
+29,Banjar (Arabic script),bjn_Arab,bjn,Arab,Arabic
+30,Banjar (Latin script),bjn_Latn,bjn,Latn,Latin
+31,Standard Tibetan,bod_Tibt,bod,Tibt,Tibetan
+32,Bosnian,bos_Latn,bos,Latn,Latin
+33,Buginese,bug_Latn,bug,Latn,Latin
+34,Bulgarian,bul_Cyrl,bul,Cyrl,Cyrillic
+35,Catalan,cat_Latn,cat,Latn,Latin
+36,Cebuano,ceb_Latn,ceb,Latn,Latin
+37,Czech,ces_Latn,ces,Latn,Latin
+38,Chokwe,cjk_Latn,cjk,Latn,Latin
+39,Central Kurdish,ckb_Arab,ckb,Arab,Arabic
+40,Crimean Tatar,crh_Latn,crh,Latn,Latin
+41,Welsh,cym_Latn,cym,Latn,Latin
+42,Danish,dan_Latn,dan,Latn,Latin
+43,German,deu_Latn,deu,Latn,Latin
+44,Southwestern Dinka,dik_Latn,dik,Latn,Latin
+45,Dyula,dyu_Latn,dyu,Latn,Latin
+46,Dzongkha,dzo_Tibt,dzo,Tibt,Tibetan
+47,Greek,ell_Grek,ell,Grek,Greek
+48,English,eng_Latn,eng,Latn,Latin
+49,Esperanto,epo_Latn,epo,Latn,Latin
+50,Estonian,est_Latn,est,Latn,Latin
+51,Basque,eus_Latn,eus,Latn,Latin
+52,Ewe,ewe_Latn,ewe,Latn,Latin
+53,Faroese,fao_Latn,fao,Latn,Latin
+54,Fijian,fij_Latn,fij,Latn,Latin
+55,Finnish,fin_Latn,fin,Latn,Latin
+56,Fon,fon_Latn,fon,Latn,Latin
+57,French,fra_Latn,fra,Latn,Latin
+58,Friulian,fur_Latn,fur,Latn,Latin
+59,Nigerian Fulfulde,fuv_Latn,fuv,Latn,Latin
+60,Scottish Gaelic,gla_Latn,gla,Latn,Latin
+61,Irish,gle_Latn,gle,Latn,Latin
+62,Galician,glg_Latn,glg,Latn,Latin
+63,Guarani,grn_Latn,grn,Latn,Latin
+64,Gujarati,guj_Gujr,guj,Gujr,Gujarati
+65,Haitian Creole,hat_Latn,hat,Latn,Latin
+66,Hausa,hau_Latn,hau,Latn,Latin
+67,Hebrew,heb_Hebr,heb,Hebr,Hebrew
+68,Hindi,hin_Deva,hin,Deva,Devanagari
+69,Chhattisgarhi,hne_Deva,hne,Deva,Devanagari
+70,Croatian,hrv_Latn,hrv,Latn,Latin
+71,Hungarian,hun_Latn,hun,Latn,Latin
+72,Armenian,hye_Armn,hye,Armn,Armenian
+73,Igbo,ibo_Latn,ibo,Latn,Latin
+74,Ilocano,ilo_Latn,ilo,Latn,Latin
+75,Indonesian,ind_Latn,ind,Latn,Latin
+76,Icelandic,isl_Latn,isl,Latn,Latin
+77,Italian,ita_Latn,ita,Latn,Latin
+78,Javanese,jav_Latn,jav,Latn,Latin
+79,Japanese,jpn_Jpan,jpn,Jpan,Japanese
+80,Kabyle,kab_Latn,kab,Latn,Latin
+81,Jingpho,kac_Latn,kac,Latn,Latin
+82,Kamba,kam_Latn,kam,Latn,Latin
+83,Kannada,kan_Knda,kan,Knda,Kannada
+84,Kashmiri (Arabic script),kas_Arab,kas,Arab,Arabic
+85,Kashmiri (Devanagari script),kas_Deva,kas,Deva,Devanagari
+86,Georgian,kat_Geor,kat,Geor,Georgian
+87,Central Kanuri (Arabic script),knc_Arab,knc,Arab,Arabic
+88,Central Kanuri (Latin script),knc_Latn,knc,Latn,Latin
+89,Kazakh,kaz_Cyrl,kaz,Cyrl,Cyrillic
+90,Kabiyè,kbp_Latn,kbp,Latn,Latin
+91,Kabuverdianu,kea_Latn,kea,Latn,Latin
+92,Khmer,khm_Khmr,khm,Khmr,Khmer
+93,Kikuyu,kik_Latn,kik,Latn,Latin
+94,Kinyarwanda,kin_Latn,kin,Latn,Latin
+95,Kyrgyz,kir_Cyrl,kir,Cyrl,Cyrillic
+96,Kimbundu,kmb_Latn,kmb,Latn,Latin
+97,Northern Kurdish,kmr_Latn,kmr,Latn,Latin
+98,Kikongo,kon_Latn,kon,Latn,Latin
+99,Korean,kor_Hang,kor,Hang,Hangul
+100,Lao,lao_Laoo,lao,Laoo,Lao
+101,Ligurian,lij_Latn,lij,Latn,Latin
+102,Limburgish,lim_Latn,lim,Latn,Latin
+103,Lingala,lin_Latn,lin,Latn,Latin
+104,Lithuanian,lit_Latn,lit,Latn,Latin
+105,Lombard,lmo_Latn,lmo,Latn,Latin
+106,Latgalian,ltg_Latn,ltg,Latn,Latin
+107,Luxembourgish,ltz_Latn,ltz,Latn,Latin
+108,Luba-Kasai,lua_Latn,lua,Latn,Latin
+109,Ganda,lug_Latn,lug,Latn,Latin
+110,Luo,luo_Latn,luo,Latn,Latin
+111,Mizo,lus_Latn,lus,Latn,Latin
+112,Standard Latvian,lvs_Latn,lvs,Latn,Latin
+113,Magahi,mag_Deva,mag,Deva,Devanagari
+114,Maithili,mai_Deva,mai,Deva,Devanagari
+115,Malayalam,mal_Mlym,mal,Mlym,Malayalam
+116,Marathi,mar_Deva,mar,Deva,Devanagari
+117,Minangkabau (Arabic script),min_Arab,min,Arab,Arabic
+118,Minangkabau (Latin script),min_Latn,min,Latn,Latin
+119,Macedonian,mkd_Cyrl,mkd,Cyrl,Cyrillic
+120,Plateau Malagasy,plt_Latn,plt,Latn,Latin
+121,Maltese,mlt_Latn,mlt,Latn,Latin
+122,Meitei (Bengali script),mni_Beng,mni,Beng,Bengali
+123,Halh Mongolian,khk_Cyrl,khk,Cyrl,Cyrillic
+124,Mossi,mos_Latn,mos,Latn,Latin
+125,Maori,mri_Latn,mri,Latn,Latin
+126,Burmese,mya_Mymr,mya,Mymr,Myanmar
+127,Dutch,nld_Latn,nld,Latn,Latin
+128,Norwegian Nynorsk,nno_Latn,nno,Latn,Latin
+129,Norwegian Bokmål,nob_Latn,nob,Latn,Latin
+130,Nepali,npi_Deva,npi,Deva,Devanagari
+131,Northern Sotho,nso_Latn,nso,Latn,Latin
+132,Nuer,nus_Latn,nus,Latn,Latin
+133,Nyanja,nya_Latn,nya,Latn,Latin
+134,Occitan,oci_Latn,oci,Latn,Latin
+135,West Central Oromo,gaz_Latn,gaz,Latn,Latin
+136,Odia,ory_Orya,ory,Orya,Odia
+137,Pangasinan,pag_Latn,pag,Latn,Latin
+138,Eastern Panjabi,pan_Guru,pan,Guru,Gurmukhi
+139,Papiamento,pap_Latn,pap,Latn,Latin
+140,Western Persian,pes_Arab,pes,Arab,Arabic
+141,Polish,pol_Latn,pol,Latn,Latin
+142,Portuguese,por_Latn,por,Latn,Latin
+143,Dari,prs_Arab,prs,Arab,Arabic
+144,Southern Pashto,pbt_Arab,pbt,Arab,Arabic
+145,Ayacucho Quechua,quy_Latn,quy,Latn,Latin
+146,Romanian,ron_Latn,ron,Latn,Latin
+147,Rundi,run_Latn,run,Latn,Latin
+148,Russian,rus_Cyrl,rus,Cyrl,Cyrillic
+149,Sango,sag_Latn,sag,Latn,Latin
+150,Sanskrit,san_Deva,san,Deva,Devanagari
+151,Santali,sat_Olck,sat,Olck,Ol Chiki
+152,Sicilian,scn_Latn,scn,Latn,Latin
+153,Shan,shn_Mymr,shn,Mymr,Myanmar
+154,Sinhala,sin_Sinh,sin,Sinh,Sinhala
+155,Slovak,slk_Latn,slk,Latn,Latin
+156,Slovenian,slv_Latn,slv,Latn,Latin
+157,Samoan,smo_Latn,smo,Latn,Latin
+158,Shona,sna_Latn,sna,Latn,Latin
+159,Sindhi,snd_Arab,snd,Arab,Arabic
+160,Somali,som_Latn,som,Latn,Latin
+161,Southern Sotho,sot_Latn,sot,Latn,Latin
+162,Spanish,spa_Latn,spa,Latn,Latin
+163,Tosk Albanian,als_Latn,als,Latn,Latin
+164,Sardinian,srd_Latn,srd,Latn,Latin
+165,Serbian,srp_Cyrl,srp,Cyrl,Cyrillic
+166,Swati,ssw_Latn,ssw,Latn,Latin
+167,Sundanese,sun_Latn,sun,Latn,Latin
+168,Swedish,swe_Latn,swe,Latn,Latin
+169,Swahili,swh_Latn,swh,Latn,Latin
+170,Silesian,szl_Latn,szl,Latn,Latin
+171,Tamil,tam_Taml,tam,Taml,Tamil
+172,Tatar,tat_Cyrl,tat,Cyrl,Cyrillic
+173,Telugu,tel_Telu,tel,Telu,Telugu
+174,Tajik,tgk_Cyrl,tgk,Cyrl,Cyrillic
+175,Tagalog,tgl_Latn,tgl,Latn,Latin
+176,Thai,tha_Thai,tha,Thai,Thai
+177,Tigrinya,tir_Ethi,tir,Ethi,Ethiopic
+178,Tamasheq (Latin script),taq_Latn,taq,Latn,Latin
+179,Tamasheq (Tifinagh script),taq_Tfng,taq,Tfng,Tifinagh
+180,Tok Pisin,tpi_Latn,tpi,Latn,Latin
+181,Tswana,tsn_Latn,tsn,Latn,Latin
+182,Tsonga,tso_Latn,tso,Latn,Latin
+183,Turkmen,tuk_Latn,tuk,Latn,Latin
+184,Tumbuka,tum_Latn,tum,Latn,Latin
+185,Turkish,tur_Latn,tur,Latn,Latin
+186,Twi,twi_Latn,twi,Latn,Latin
+187,Central Atlas Tamazight,tzm_Tfng,tzm,Tfng,Tifinagh
+188,Uyghur,uig_Arab,uig,Arab,Arabic
+189,Ukrainian,ukr_Cyrl,ukr,Cyrl,Cyrillic
+190,Umbundu,umb_Latn,umb,Latn,Latin
+191,Urdu,urd_Arab,urd,Arab,Arabic
+192,Northern Uzbek,uzn_Latn,uzn,Latn,Latin
+193,Venetian,vec_Latn,vec,Latn,Latin
+194,Vietnamese,vie_Latn,vie,Latn,Latin
+195,Waray,war_Latn,war,Latn,Latin
+196,Wolof,wol_Latn,wol,Latn,Latin
+197,Xhosa,xho_Latn,xho,Latn,Latin
+198,Eastern Yiddish,ydd_Hebr,ydd,Hebr,Hebrew
+199,Yoruba,yor_Latn,yor,Latn,Latin
+200,Yue Chinese,yue_Hant,yue,Hant,Traditional Han
+201,Chinese (Simplified),zho_Hans,zho,Hans,Simplified Han
+202,Chinese (Traditional),zho_Hant,zho,Hant,Traditional Han
+203,Standard Malay,zsm_Latn,zsm,Latn,Latin
+204,Zulu,zul_Latn,zul,Latn,Latin
