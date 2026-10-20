@@ -1,4 +1,4 @@
-# Téléphone arabe NLP — Robustesse des modèles NLLB en back-translation
+# Téléphone arabe NLP, Robustesse des modèles NLLB en back-translation
 
 Projet du cours de Traitement du Langage Naturel (EPITA).
 
@@ -7,7 +7,7 @@ Projet du cours de Traitement du Langage Naturel (EPITA).
 On reprend le principe du **« téléphone arabe »** appliqué à la traduction automatique :
 une phrase anglaise est traduite en chaîne à travers plusieurs langues intermédiaires,
 puis **re-traduite vers l'anglais** (back-translation) à chaque étape. En comparant la
-re-traduction à la phrase de départ, on mesure la **dérive sémantique** accumulée — donc
+re-traduction à la phrase de départ, on mesure la **dérive sémantique** accumulée, donc
 la **robustesse** du modèle de traduction.
 
 Le sujet étant volontairement simple, le projet est construit comme un **benchmark
