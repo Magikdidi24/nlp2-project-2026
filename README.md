@@ -1,128 +1,64 @@
-# Téléphone arabe NLP, Robustesse des modèles NLLB en back-translation
+# Telephone game with NLLB
 
-Projet du cours de Traitement du Langage Naturel (EPITA).
+Project for the NLP course at EPITA. It's the telephone game with machine translation: an English sentence goes through a chain of languages, and at each step I translate the current text back to English and compare it with the original sentence. If the meaning drifts, the scores drop.
 
-## Cas d'usage
+The translation model is [NLLB-200](https://huggingface.co/docs/transformers/model_doc/nllb) from Meta, used as is through HuggingFace Transformers, no fine-tuning. The course asked for a comparison of pretrained models, so there's also a benchmark mode that runs `facebook/nllb-200-distilled-600M` and `facebook/nllb-200-1.3B` on sentences from FLORES-200. The 3.3B can be picked in the interactive mode but I left it out of the benchmark, it's about 17 GB.
 
-On reprend le principe du **« téléphone arabe »** appliqué à la traduction automatique :
-une phrase anglaise est traduite en chaîne à travers plusieurs langues intermédiaires,
-puis **re-traduite vers l'anglais** (back-translation) à chaque étape. En comparant la
-re-traduction à la phrase de départ, on mesure la **dérive sémantique** accumulée, donc
-la **robustesse** du modèle de traduction.
+Everything is in `nlp.py`. By default the chain is French, German, Italian, Spanish. Each step translates the previous translation into the next language, then translates that back to English with the same model. So at step 4 the text has gone English -> French -> German -> Italian -> Spanish, and the Spanish version is what gets translated back. Decoding is beam search with 4 beams and at most 80 new tokens.
 
-Le sujet étant volontairement simple, le projet est construit comme un **benchmark
-comparatif** de plusieurs modèles pré-entraînés, conformément aux consignes.
+The back-translation is compared with the original sentence using:
 
-## Modèle pré-entraîné
+- BLEU and chrF from sacrebleu (0 to 100)
+- METEOR from nltk (0 to 1)
+- BERTScore F1 (0 to 1)
+- character similarity with difflib's SequenceMatcher, after lowercasing and removing punctuation (0 to 1)
+- cosine similarity between TF-IDF vectors of words and word pairs (0 to 1)
 
-[**NLLB-200**](https://huggingface.co/docs/transformers/model_doc/nllb) (*No Language Left
-Behind*, Meta), utilisé en **inférence** via HuggingFace Transformers. Deux tailles sont
-comparées :
+Higher is closer to the original for all of them.
 
-| Modèle | Paramètres |
-|---|---|
-| `facebook/nllb-200-distilled-600M` | 600 M |
-| `facebook/nllb-200-1.3B` | 1.3 B |
+## Results
 
-(Le `nllb-200-3.3B` est exclu pour son coût mémoire/calcul.)
+The only run in the repo is one interactive run, in `results/`. It uses the default sentence "Our NLP's teacher is the best teacher at EPITA !", the default languages and 4 steps. The csv doesn't say which model it was.
 
-## Architecture
+| step | language | back to English | BLEU | chrF | METEOR | BERTScore |
+|---|---|---|---:|---:|---:|---:|
+| 1 | French | Our NLP teacher is the best teacher in EPITA! | 46.7 | 75.7 | 0.595 | 0.972 |
+| 2 | German | Our NLP professor is the best teacher in EPITA! | 32.5 | 61.1 | 0.489 | 0.967 |
+| 3 | Italian | Our professor of NLP is the best teacher in EPITA! | 29.0 | 54.5 | 0.484 | 0.961 |
+| 4 | Spanish | Our NLP teacher is the best teacher in EPITA! | 46.7 | 75.7 | 0.595 | 0.972 |
 
-```
-phrase EN ──translate──▶ langue 1 ──translate──▶ langue 2 ──▶ … (N étapes)
-   │                         │
-   │  à chaque étape : back-translation vers l'anglais
-   ▼                         ▼
- référence  ◀── métriques ── re-traduction EN
-```
+The meaning never really changes, only the wording (teacher or professor, "professor of NLP"). Step 4 even comes back to the exact same sentence as step 1, so the scores go back up instead of drifting further. BLEU is only 46.7 at step 1 because "NLP's" became "NLP" and "at" became "in", while BERTScore stays between 0.96 and 0.97 the whole time.
 
-- **`MTA`** (`nlp.py`) encapsule le modèle NLLB (chargement GPU/CPU, traduction beam search).
-- **`run_MTA`** exécute la chaîne et calcule les métriques à chaque étape.
-- **`run_benchmark`** rejoue ce processus pour chaque modèle sur tout un corpus et agrège.
+![lexical and TF-IDF similarity per step](results/line_chart.png)
 
-## Métriques
+`results/bar_chart.png` shows how much the TF-IDF score drops at each step (negative for Spanish since it goes back up). The plot labels are in French.
 
-Chaque re-traduction (anglais) est comparée à la phrase initiale (anglais) avec :
+One sentence doesn't say much. The benchmark is meant for that, but its output isn't in the repo, so there are no numbers comparing 600M and 1.3B here.
 
-| Métrique | Échelle | Mesure |
-|---|---|---|
-| **BLEU** (sacrebleu) | 0–100 | recouvrement de n-grammes de mots |
-| **chrF** (sacrebleu) | 0–100 | n-grammes de caractères (robuste à la morphologie) |
-| **METEOR** (nltk) | 0–1 | tient compte des synonymes/stemming (WordNet) |
-| **BERTScore F1** | 0–1 | similarité sémantique par embeddings |
-| Similarité lexicale (Ratcliff/Obershelp) | 0–1 | similarité de surface (complément) |
-| Similarité TF-IDF + cosinus | 0–1 | proximité thématique (complément) |
+## Run
 
-Plus le score est **élevé**, mieux le sens est **conservé** après la chaîne de traductions.
-
-## Installation
+`nlp.py` reads `requirements.txt` at start to check the packages are installed, so start it from the repo root. It uses the GPU if there is one, otherwise the CPU. The first run downloads the models and the WordNet data for METEOR. The prompts are in French.
 
 ```bash
-python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-
-# Ressources WordNet pour METEOR (une seule fois) :
-python -m nltk.downloader wordnet omw-1.4
-```
-
-## Données
-
-Sous-ensemble de **FLORES-200** (Meta), partition `devtest`, phrases anglaises.
-Généré par un script (la consigne autorise un script de téléchargement) :
-
-```bash
-python download_flores.py --n 100
-```
-
-## Utilisation
-
-### Démo interactive (une phrase)
-
-```bash
 python nlp.py
-python nlp.py -v
 ```
 
-Options : `-v` verbeux · `-c` choisir les langues (depuis `languages.csv`) ·
-`-m` choisir le modèle · `-r` langues aléatoires · `-t` phrase personnalisée ·
-`-h` aide. Le récapitulatif final (phrases + toutes les métriques) s'affiche toujours,
-et les résultats sont écrits dans `results/results.csv`.
+It asks for the number of steps, prints every translation with its scores and writes `results/results.csv`, `results/bar_chart.png` and `results/line_chart.png` (so it overwrites the ones above). Options:
 
-### Benchmark comparatif
+- `-v` prints more
+- `-m` choose the model (600M, 1.3B or 3.3B)
+- `-c` choose the languages from `languages.csv`
+- `-r` pick the next language at random
+- `-t` type your own starting sentence and its language
+
+For the benchmark:
 
 ```bash
-python download_flores.py --n 25 
+python download_flores.py --n 25
 python nlp.py -b
 ```
 
-Produit :
-- un **tableau comparatif** dans le terminal,
-- `results/benchmark.csv` (une ligne par modèle, une colonne par métrique),
-- `results/benchmark.png` (graphe des métriques normalisées par modèle).
+`download_flores.py` downloads the FLORES-200 archive from Meta and writes the first n English sentences of the devtest split to `data/flores_eng.txt`. The repo already has 100 of them, so the first line is only needed if you want a different number. `-b` runs both models on every sentence with 4 steps and scores only the last step. BLEU and chrF are computed on the whole corpus, the other metrics are averaged. It prints a table and writes `results/benchmark.csv` and `results/benchmark.png`.
 
-> **Coût** : le benchmark fait `N_phrases × N_étapes × 2 traductions × 2 modèles`
-
-## Résultats
-
-Les artefacts sont écrits dans `results/` : `results.csv`, `benchmark.csv`,
-`benchmark.png` (+ graphes du run interactif). Le tableau `benchmark.csv` constitue
-le livrable de comparaison des modèles.
-
-## Structure du dépôt
-
-```
-nlp.py              # programme principal (traduction, métriques, benchmark, CLI)
-download_flores.py  # téléchargement du sous-ensemble FLORES-200
-languages.csv       # table des 200 codes de langues NLLB
-requirements.txt    # dépendances épinglées
-data/               # corpus généré (flores_eng.txt)
-results/            # sorties (CSV + figures)
-```
-
-## Limites & perspectives
-
-- Pas de fine-tuning : comparaison de modèles **pré-entraînés** en inférence.
-- BLEU/chrF au niveau corpus restent bruités sur de petits corpus → élargir le jeu de
-  données pour plus de robustesse statistique.
-- Pistes : comparer d'autres systèmes (M2M100, OPUS-MT), étudier l'effet du **chemin de
-  langues** et de la **longueur de chaîne**, ajouter COMET (métrique neuronale MT).
+With the 100 sentences that's 100 x 4 x 2 x 2 = 1600 translations, plus all the metrics at every step.
